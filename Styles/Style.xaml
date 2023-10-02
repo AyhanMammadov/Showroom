@@ -9,8 +9,8 @@
             <Ellipse x:Name = "ButtonEllipse" Height = "50" Width = "120" >
                 <Ellipse.Fill>
                     <LinearGradientBrush StartPoint = "0,0.2" EndPoint = "0.2,1.4">
-                        <GradientStop Offset = "0" Color = "Gray" />
-                        <GradientStop Offset = "1" Color = "DarkGray" />
+                        <GradientStop Offset = "0" Color = "DarkRed" />
+                        <GradientStop Offset = "1" Color = "#FF500303" />
                     </LinearGradientBrush>
                 </Ellipse.Fill>
             </Ellipse>
@@ -25,8 +25,8 @@
                 <Setter TargetName = "ButtonEllipse" Property = "Fill" >
                     <Setter.Value>
                         <LinearGradientBrush StartPoint = "0,0.2" EndPoint = "0.2,1.4">
-                            <GradientStop Offset = "0" Color = "DarkRed" />
-                            <GradientStop Offset = "1" Color = "NavajoWhite" />
+                            <GradientStop Offset = "0" Color = "#FFFB0023" />
+                            <GradientStop Offset = "1" Color = "#FF31042D" />
                         </LinearGradientBrush>
                     </Setter.Value>
                 </Setter>
