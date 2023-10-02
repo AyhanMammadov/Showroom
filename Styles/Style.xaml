@@ -5,13 +5,12 @@
 
 
     <ControlTemplate x:Key = "ButtonTemplate" TargetType = "Button">
-
         <Grid>
-            <Ellipse x:Name = "ButtonEllipse" Height = "25" Width = "75" >
+            <Ellipse x:Name = "ButtonEllipse" Height = "50" Width = "120" >
                 <Ellipse.Fill>
                     <LinearGradientBrush StartPoint = "0,0.2" EndPoint = "0.2,1.4">
-                        <GradientStop Offset = "0" Color = "Red" />
-                        <GradientStop Offset = "1" Color = "Orange" />
+                        <GradientStop Offset = "0" Color = "Gray" />
+                        <GradientStop Offset = "1" Color = "DarkGray" />
                     </LinearGradientBrush>
                 </Ellipse.Fill>
             </Ellipse>
@@ -26,8 +25,8 @@
                 <Setter TargetName = "ButtonEllipse" Property = "Fill" >
                     <Setter.Value>
                         <LinearGradientBrush StartPoint = "0,0.2" EndPoint = "0.2,1.4">
-                            <GradientStop Offset = "0" Color = "YellowGreen" />
-                            <GradientStop Offset = "1" Color = "Gold" />
+                            <GradientStop Offset = "0" Color = "DarkRed" />
+                            <GradientStop Offset = "1" Color = "NavajoWhite" />
                         </LinearGradientBrush>
                     </Setter.Value>
                 </Setter>
@@ -44,8 +43,19 @@
             </Trigger>
 
         </ControlTemplate.Triggers>
-
     </ControlTemplate>
-    
+
+
+
+    <Style TargetType="Label" x:Key="CustomLabelStyle">
+        <Setter Property="FontFamily" Value="Arial" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Foreground" Value="WhiteSmoke" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="FontStyle" Value="Italic" />
+    </Style>
+
+
+
 
 </ResourceDictionary>
