@@ -6,7 +6,26 @@
              xmlns:local="clr-namespace:Showroom.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Background="White">
-    <Grid>
-        <TextBlock Text="Home"/>
+    <Grid Background="Black">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid >
+            <StackPanel HorizontalAlignment="Center" Margin="0 70 0 0">
+                <Label Content="Bring the old one," Foreground="White" FontSize="45" FontWeight="Bold"/>
+                <Label Content="replace it with the new one!" Foreground="White" FontSize="45" FontWeight="Bold"/>
+                <TextBlock Text ="You can approach our showrooms under the 'Trade-in' terms, regardless of the brand of your car. 
+Our colleagues will inspect your car and try to provide the most suitable valuation for you. 
+In the end, you can become the owner of new BAIC and JAC models." Foreground="White" TextWrapping="Wrap" FontSize="20" FontStyle="Italic"/>
+            </StackPanel>
+        </Grid>
+
+
+        <Grid Grid.Column="1" MouseEnter="OnMouseEnter" MouseLeave="OnMouseLeave">
+            <Image x:Name="imageControl" Source="https://static.vecteezy.com/system/resources/previews/012/006/391/non_2x/old-style-classic-car-png.png" />
+        </Grid>
+        
     </Grid>
 </UserControl>

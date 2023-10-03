@@ -16,14 +16,14 @@
 
     </Window.Resources>
 
-    <Grid>
+    <Grid Background="Black">
         <Grid.RowDefinitions>
             <RowDefinition Height="90"/>
             <RowDefinition Height="50"/>
             <RowDefinition/>
             <RowDefinition Height="120"/>
         </Grid.RowDefinitions>
-        <Grid Background="Black">
+        <Grid>
             <Viewbox>
                 <StackPanel Orientation="Horizontal">
                     <Image Source="https://xn--80aed5aobb1a.xn--p1ai/wp-content/uploads/baic-motor-logo-2560x1440.png"
@@ -36,13 +36,13 @@
             </Viewbox>
 
             <StackPanel Grid.Row="0" HorizontalAlignment="Right" Margin="10">
-                <TextBlock x:Name="DateTextBlock" FontSize="16" Foreground="WhiteSmoke" FontStyle="Italic" FontWeight="Bold" />
-                <TextBlock x:Name="DayOfWeekTextBlock" FontSize="16" Foreground="WhiteSmoke" FontStyle="Italic" FontWeight="Bold" />
-                <TextBlock x:Name="TimeTextBlock" FontSize="16" Foreground="WhiteSmoke" FontStyle="Italic" FontWeight="Bold" />
+                <TextBlock x:Name="TimeTextBlock" FontSize="18" Foreground="WhiteSmoke" FontStyle="Italic" FontWeight="Bold" />
+                <TextBlock x:Name="DateTextBlock" FontSize="18" Foreground="WhiteSmoke" FontStyle="Italic" FontWeight="Bold" />
+                <TextBlock x:Name="DayOfWeekTextBlock" FontSize="17" Foreground="WhiteSmoke" FontStyle="Italic" FontWeight="Bold" />
             </StackPanel>
         </Grid>
 
-        <UniformGrid Background="Black" Grid.Row="1" Columns="8">
+        <UniformGrid Grid.Row="1" Columns="8">
             <Button Template = "{StaticResource ButtonTemplate}" Content="Baic X55" Click="BaicX55Clicked"/>
             <Button Template = "{StaticResource ButtonTemplate}" Content="Baic X7" Click="BaicX7Clicked"/>
             <Button Template = "{StaticResource ButtonTemplate}" Content="Baic X3" Click="BaicX3Clicked"/>
@@ -53,7 +53,7 @@
             <Button Template = "{StaticResource ButtonTemplate}" Content="Test Drive" Click="TestDriveClicked"/>
         </UniformGrid>
 
-        <Grid Grid.Row="3" Background="Black">
+        <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -83,7 +83,6 @@
             </StackPanel>
         </Grid>
         <ContentControl Grid.Row="2" Margin="20" Content="{Binding ActiveViewModel}">
-
         </ContentControl>
     </Grid>
 </Window>

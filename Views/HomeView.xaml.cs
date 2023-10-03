@@ -24,5 +24,16 @@ namespace Showroom.Views
         {
             InitializeComponent();
         }
+
+
+        private void OnMouseEnter(object sender, MouseEventArgs e)
+        {
+            this.imageControl.Source = new BitmapImage(new Uri("https://performance-center.az/frontend/web/uploads//images/X7png.png", UriKind.RelativeOrAbsolute));
+        }
+
+        private void OnMouseLeave(object sender, MouseEventArgs e)
+        {
+            this.imageControl.Source = new BitmapImage(new Uri("https://static.vecteezy.com/system/resources/previews/012/006/391/non_2x/old-style-classic-car-png.png", UriKind.RelativeOrAbsolute));
+        }
     }
 }
