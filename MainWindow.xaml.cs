@@ -56,5 +56,22 @@ namespace Showroom
         private void LoyaltyCardClicked(object sender, RoutedEventArgs e) => this.viewModel.ActiveViewModel = new LoyaltyCardViewModel();
         private void AboutUsClicked(object sender, RoutedEventArgs e) => this.viewModel.ActiveViewModel = new AboutUsViewModel();
         private void TestDriveClicked(object sender, RoutedEventArgs e) => this.viewModel.ActiveViewModel = new TestDriveViewModel();
+
+        private void SubscribeClicked(object sender, RoutedEventArgs e)
+        {
+            string wrongEmail = "Wrong email template";
+            if (string.IsNullOrWhiteSpace(this.emailAdress.Text) || !this.emailAdress.Text.Contains("@"))
+            {
+                this.emailtextbox.Text = wrongEmail;
+                this.emailtextbox.Visibility = Visibility.Visible;
+                return;
+            }
+            
+            this.emailtextbox.Text = $"{this.emailAdress.Text} email adres subscribed succesfully!";
+            this.emailtextbox.Visibility = Visibility.Visible;
+            this.emailAdress.Clear();
+            return;
+            
+        }
     }
 }

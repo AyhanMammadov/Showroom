@@ -63,9 +63,10 @@
             <StackPanel HorizontalAlignment="Center" Grid.Column="3">
                 <Label Content="Stay Informed About Updates!" Style ="{StaticResource CustomLabelStyle}"/>
                 <Label Content="To stay informed about updates, please enter your email address." Style ="{StaticResource CustomLabelStyle}"/>
-                <TextBox Background="White" Height="30" Margin="10 0 10 0" FontSize="20" FontFamily="Arial"/>
-                <Button Content="Subscribe"  Height="30" Margin="10 0 10 0" FontSize="20" FontFamily="Arial" Foreground="White"
-                        Background="Black" Cursor="Hand"/>
+                <TextBox x:Name="emailAdress" Background="White" Height="25" Margin="10 0 10 0" FontSize="20" FontFamily="Arial"/>
+                <Button Content="Subscribe"  Height="22" Margin="10 0 10 0" FontSize="15" FontFamily="Arial" Foreground="White"
+                        Background="Black" Cursor="Hand" Click="SubscribeClicked" />
+                <TextBlock x:Name="emailtextbox" Visibility="Hidden" Foreground="White"/>
             </StackPanel>
 
 
