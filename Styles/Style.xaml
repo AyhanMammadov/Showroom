@@ -53,12 +53,37 @@
 
     <Style TargetType="Label" x:Key="CustomLabelStyle">
         <Setter Property="FontFamily" Value="Arial" />
-            <Setter Property="FontSize" Value="14" />
-            <Setter Property="Foreground" Value="WhiteSmoke" />
-            <Setter Property="FontWeight" Value="Bold" />
-            <Setter Property="FontStyle" Value="Italic" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Foreground" Value="WhiteSmoke" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="FontStyle" Value="Italic" />
     </Style>
 
+
+    <Style x:Key="ToggleSwitchStyle" TargetType="ToggleButton">
+        <Setter Property="Width" Value="100"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontStyle" Value="Italic"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="Gray" BorderThickness="1" CornerRadius="15">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background" Value="Black"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter Property="Background" Value="DarkCyan"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
 
 

@@ -35,7 +35,7 @@ namespace Showroom
             this.DataContext = this.viewModel;
 
             timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1); // Обновление каждую секунду
+            timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += TimerTick;
             timer.Start();
         }
@@ -73,5 +73,17 @@ namespace Showroom
             return;
             
         }
+
+        private void themeClicked(object sender, RoutedEventArgs e)
+        {
+            if (this.mainGrid.Background is SolidColorBrush brush)
+            {
+                if (brush.Color == Colors.Black)
+                    this.mainGrid.Background = new SolidColorBrush(Colors.DarkCyan);
+                else if (brush.Color == Colors.DarkCyan)
+                    this.mainGrid.Background = new SolidColorBrush(Colors.Black);
+            }
+        }
     }
+
 }

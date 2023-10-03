@@ -16,7 +16,7 @@
 
     </Window.Resources>
 
-    <Grid Background="Black">
+    <Grid Background="Black" x:Name="mainGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="90"/>
             <RowDefinition Height="50"/>
@@ -40,6 +40,9 @@
                 <TextBlock x:Name="DateTextBlock" FontSize="18" Foreground="WhiteSmoke" FontStyle="Italic" FontWeight="Bold" />
                 <TextBlock x:Name="DayOfWeekTextBlock" FontSize="17" Foreground="WhiteSmoke" FontStyle="Italic" FontWeight="Bold" />
             </StackPanel>
+
+            <ToggleButton Style="{StaticResource ToggleSwitchStyle}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10" Content="Theme"
+                              Click="themeClicked"/>
         </Grid>
 
         <UniformGrid Grid.Row="1" Columns="8">
