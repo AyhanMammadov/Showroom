@@ -2,8 +2,47 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Showroom"
+             xmlns:vm ="clr-namespace:Showroom.ViewModels"
+             xmlns:v="clr-namespace:Showroom.Views"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+
+        <DataTemplate DataType="{x:Type vm:BaicX3ViewModel}">
+            <v:BaicX3View/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:BaicX55ViewModel}">
+            <v:BaicX55View/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type vm:BaicX7ViewModel}">
+            <v:BaicX7View/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:AboutUsViewModel}">
+            <v:AboutUsView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:HomeViewModel}">
+            <v:HomeView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:JacJs8ViewModel}">
+            <v:JacJs8View/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:JACT8ViewModel}">
+            <v:JacT8View/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:LoyaltyCardViewModel}">
+            <v:LoyaltyCardView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:TestDriveViewModel}">
+            <v:TestDriveView/>
+        </DataTemplate>
+
+
     </Application.Resources>
 </Application>

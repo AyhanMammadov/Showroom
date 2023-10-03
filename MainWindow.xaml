@@ -24,8 +24,6 @@
             <RowDefinition Height="120"/>
         </Grid.RowDefinitions>
         <Grid Background="Black">
-                <!--<Button Content="SignUp" Template = "{StaticResource ButtonTemplate}" FontSize="25" Margin="-600 10 10 0"/>
-                <Button Content="Login" Template = "{StaticResource ButtonTemplate}" FontSize="25" FontFamily="Arial" FontWeight="ExtraLight" Padding="10.5" Margin="0 10 10 0"/>-->
             <Viewbox>
                 <StackPanel Orientation="Horizontal">
                     <Image Source="https://xn--80aed5aobb1a.xn--p1ai/wp-content/uploads/baic-motor-logo-2560x1440.png"
@@ -45,14 +43,14 @@
         </Grid>
 
         <UniformGrid Background="Black" Grid.Row="1" Columns="8">
-            <Button Template = "{StaticResource ButtonTemplate}" Content="Baic X55" FontSize="20" FontWeight="Bold" Foreground="AntiqueWhite"/>
-            <Button Template = "{StaticResource ButtonTemplate}" Content="Baic X7" FontSize="20" FontWeight="Bold" Foreground="AntiqueWhite"/>
-            <Button Template = "{StaticResource ButtonTemplate}" Content="Baic X3" FontSize="20" FontWeight="Bold" Foreground="AntiqueWhite"/>
-            <Button Template = "{StaticResource ButtonTemplate}" Content="JAC T8" FontSize="20" FontWeight="Bold" Foreground="AntiqueWhite"/>
-            <Button Template = "{StaticResource ButtonTemplate}" Content="JAC JS8" FontSize="20" FontWeight="Bold" Foreground="AntiqueWhite"/>
-            <Button Template = "{StaticResource ButtonTemplate}" Content="Loyalty" FontSize="20" FontWeight="Bold" Foreground="AntiqueWhite"/>
-            <Button Template = "{StaticResource ButtonTemplate}" Content="About Us" FontSize="20" FontWeight="Bold" Foreground="AntiqueWhite"/>
-            <Button Template = "{StaticResource ButtonTemplate}" Content="Test Drive" FontSize="20" FontWeight="Bold" Foreground="AntiqueWhite"/>
+            <Button Template = "{StaticResource ButtonTemplate}" Content="Baic X55" Click="BaicX55Clicked"/>
+            <Button Template = "{StaticResource ButtonTemplate}" Content="Baic X7" Click="BaicX7Clicked"/>
+            <Button Template = "{StaticResource ButtonTemplate}" Content="Baic X3" Click="BaicX3Clicked"/>
+            <Button Template = "{StaticResource ButtonTemplate}" Content="JAC T8" Click="JacT8Clicked"/>
+            <Button Template = "{StaticResource ButtonTemplate}" Content="JAC JS8" Click="JacJs8Clicked"/>
+            <Button Template = "{StaticResource ButtonTemplate}" Content="Loyalty" Click="LoyaltyCardClicked"/>
+            <Button Template = "{StaticResource ButtonTemplate}" Content="About Us" Click="AboutUsClicked"/>
+            <Button Template = "{StaticResource ButtonTemplate}" Content="Test Drive" Click="TestDriveClicked"/>
         </UniformGrid>
 
         <Grid Grid.Row="3" Background="Black">
@@ -61,7 +59,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="460"/>
             </Grid.ColumnDefinitions>
-            
+
             <StackPanel HorizontalAlignment="Center" Grid.Column="3">
                 <Label Content="Stay Informed About Updates!" Style ="{StaticResource CustomLabelStyle}"/>
                 <Label Content="To stay informed about updates, please enter your email address." Style ="{StaticResource CustomLabelStyle}"/>
@@ -84,5 +82,8 @@
                 <Label Content="Phone: 1633, 012 / 050 433 48 88" Style ="{StaticResource CustomLabelStyle}" />
             </StackPanel>
         </Grid>
+        <ContentControl Grid.Row="2" Margin="20" Content="{Binding ActiveViewModel}">
+
+        </ContentControl>
     </Grid>
 </Window>

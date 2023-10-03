@@ -3,45 +3,49 @@
 
 
 
-
-    <ControlTemplate x:Key = "ButtonTemplate" TargetType = "Button">
+    <ControlTemplate x:Key="ButtonTemplate" TargetType="Button">
         <Grid>
-            <Ellipse x:Name = "ButtonEllipse" Height = "50" Width = "120" >
+            <Ellipse x:Name="ButtonEllipse" Height="50" Width="120">
                 <Ellipse.Fill>
-                    <LinearGradientBrush StartPoint = "0,0.2" EndPoint = "0.2,1.4">
-                        <GradientStop Offset = "0" Color = "DarkRed" />
-                        <GradientStop Offset = "1" Color = "#FF500303" />
+                    <LinearGradientBrush StartPoint="0,0.2" EndPoint="0.2,1.4">
+                        <GradientStop Offset="0" Color="DarkRed" />
+                        <GradientStop Offset="1" Color="#FF500303" />
                     </LinearGradientBrush>
                 </Ellipse.Fill>
             </Ellipse>
 
-            <ContentPresenter Content = "{TemplateBinding Content}" 
-               HorizontalAlignment = "Center" VerticalAlignment = "Center" />
+            <ContentPresenter Content="{TemplateBinding Content}" 
+                          HorizontalAlignment="Center" VerticalAlignment="Center">
+                <ContentPresenter.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="FontSize" Value="20" />
+                        <Setter Property="FontWeight" Value="Bold" />
+                        <Setter Property="Foreground" Value="AntiqueWhite" />
+                    </Style>
+                </ContentPresenter.Resources>
+            </ContentPresenter>
         </Grid>
 
         <ControlTemplate.Triggers>
-
-            <Trigger Property = "IsMouseOver" Value = "True">
-                <Setter TargetName = "ButtonEllipse" Property = "Fill" >
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="ButtonEllipse" Property="Fill">
                     <Setter.Value>
-                        <LinearGradientBrush StartPoint = "0,0.2" EndPoint = "0.2,1.4">
-                            <GradientStop Offset = "0" Color = "#FFFB0023" />
-                            <GradientStop Offset = "1" Color = "#FF31042D" />
+                        <LinearGradientBrush StartPoint="0,0.2" EndPoint="0.2,1.4">
+                            <GradientStop Offset="0" Color="#FFFB0023" />
+                            <GradientStop Offset="1" Color="#FF31042D" />
                         </LinearGradientBrush>
                     </Setter.Value>
                 </Setter>
             </Trigger>
 
-            <Trigger Property = "IsPressed" Value = "True">
-                <Setter Property = "RenderTransform">
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="RenderTransform">
                     <Setter.Value>
-                        <ScaleTransform ScaleX = "0.8" ScaleY = "0.8" 
-                        CenterX = "0" CenterY = "0"  />
+                        <ScaleTransform ScaleX="0.8" ScaleY="0.8" CenterX="0" CenterY="0" />
                     </Setter.Value>
                 </Setter>
-                <Setter Property = "RenderTransformOrigin" Value = "0.5,0.5" />
+                <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
             </Trigger>
-
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
