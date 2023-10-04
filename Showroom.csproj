@@ -8,11 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Assets\baicX55.txt" />
+    <None Remove="Assets\carsInfo.txt" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Assets\baicX55.txt">
+    <Content Include="Assets\carsInfo.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
