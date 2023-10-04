@@ -33,12 +33,10 @@ namespace Showroom
             this.DataContext = this.viewModel;
 
             timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(100);
+            timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += TimerTick;
             timer.Start();
         }
-
-
         private void TimerTick(object sender, EventArgs e)
         {
             DateTextBlock.Text = DateTime.Now.ToString("dd/MM/yyyy");
