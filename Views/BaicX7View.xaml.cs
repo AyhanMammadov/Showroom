@@ -54,15 +54,7 @@ public partial class BaicX7View : UserControl , INotifyPropertyChanged
 
             };
     }
-    private void PreviousImage(object sender, RoutedEventArgs e)
-    {
-        if (currentIndex > 0)
-        {
-            currentIndex--;
-            this.PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(CurrentImage)));
-        }
-
-    }
+    
     private void ImageButtonClicked(object sender, RoutedEventArgs e)
     {
         if (sender is Button button)

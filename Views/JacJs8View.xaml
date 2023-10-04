@@ -5,8 +5,31 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Showroom.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" Background="White">
+             d:DesignHeight="450" d:DesignWidth="800" Background="Black">
     <Grid>
-        <TextBlock Text="JAC JS8 ekran"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="{Binding CarDetails}" FontFamily="Segoe UI, Arial, sans-serif" FontSize="17" 
+                   Foreground="White" TextWrapping="Wrap" FontWeight="Bold"/>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="400"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Image Source="{Binding CurrentImage}" Margin="0 2 0 35" RenderOptions.BitmapScalingMode="HighQuality" Height="400" />
+
+                <UniformGrid Margin="0 365 0 0" Columns="2" Background="Black" Height="30">
+                    <Button Content="←" Margin="150 0 0 0" Width="40" Background="Black" Foreground="White" FontSize="22" Click="ImageButtonClicked"/>
+                    <Button Content="→" Margin="0 0 100 0" Width="40" Background="Black" Foreground="White" FontSize="22" Click="ImageButtonClicked"/>
+                </UniformGrid>
+
+                <Label Grid.Row="1" Content="Price: 46.900 AZN including VAT" Foreground="White" 
+                   FontSize="25" FontStyle="Italic" FontWeight="Bold" Margin="50 0 0 0"/>
+            </Grid>
+        </Grid>
     </Grid>
 </UserControl>
