@@ -18,9 +18,7 @@ using System.Windows.Threading;
 
 namespace Showroom
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+
     public partial class MainWindow : Window
     {
         private DispatcherTimer timer;
@@ -35,7 +33,7 @@ namespace Showroom
             this.DataContext = this.viewModel;
 
             timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Interval = TimeSpan.FromSeconds(100);
             timer.Tick += TimerTick;
             timer.Start();
         }
@@ -47,7 +45,6 @@ namespace Showroom
             DayOfWeekTextBlock.Text = DateTime.Now.ToString("dddd" , new CultureInfo("en-US"));
             TimeTextBlock.Text = DateTime.Now.ToString("HH:mm:ss");
         }
-
         private void BaicX55Clicked(object sender, RoutedEventArgs e) => this.viewModel.ActiveViewModel = new BaicX55ViewModel();
         private void BaicX3Clicked(object sender, RoutedEventArgs e) => this.viewModel.ActiveViewModel = new BaicX3ViewModel();
         private void BaicX7Clicked(object sender, RoutedEventArgs e) => this.viewModel.ActiveViewModel = new BaicX7ViewModel();
@@ -56,11 +53,10 @@ namespace Showroom
         private void LoyaltyCardClicked(object sender, RoutedEventArgs e) => this.viewModel.ActiveViewModel = new LoyaltyCardViewModel();
         private void AboutUsClicked(object sender, RoutedEventArgs e) => this.viewModel.ActiveViewModel = new AboutUsViewModel();
         private void TestDriveClicked(object sender, RoutedEventArgs e) => this.viewModel.ActiveViewModel = new TestDriveViewModel();
-
         private void SubscribeClicked(object sender, RoutedEventArgs e)
         {
             string wrongEmail = "Wrong email template";
-            if (string.IsNullOrWhiteSpace(this.emailAdress.Text) || !this.emailAdress.Text.Contains("@"))
+            if (string.IsNullOrWhiteSpace(this.emailAdress.Text) || !this.emailAdress.Text.Contains("@") || !this.emailAdress.Text.Contains("."))
             {
                 this.emailtextbox.Text = wrongEmail;
                 this.emailtextbox.Visibility = Visibility.Visible;
@@ -73,7 +69,6 @@ namespace Showroom
             return;
             
         }
-
         private void themeClicked(object sender, RoutedEventArgs e)
         {
             if (this.mainGrid.Background is SolidColorBrush brush)
