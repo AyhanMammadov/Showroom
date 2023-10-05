@@ -9,12 +9,25 @@
 
   <ItemGroup>
     <None Remove="Assets\carsInfo.txt" />
+    <None Remove="SQL\CarPhotos\CreateX55.sql" />
+    <None Remove="SQL\CarPhotos\InsertX55.sql" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="Assets\carsInfo.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="SQL\CarPhotos\CreateX55.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\CarPhotos\InsertX55.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.4" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
 
 </Project>
