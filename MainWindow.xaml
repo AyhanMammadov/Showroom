@@ -46,14 +46,14 @@
         </Grid>
 
         <UniformGrid Grid.Row="1" Columns="8">
-            <Button Template = "{StaticResource ButtonTemplate}" Content="Baic X55" Click="BaicX55Clicked"/>
-            <Button Template = "{StaticResource ButtonTemplate}" Content="Baic X7" Click="BaicX7Clicked"/>
-            <Button Template = "{StaticResource ButtonTemplate}" Content="Baic X3" Click="BaicX3Clicked"/>
-            <Button Template = "{StaticResource ButtonTemplate}" Content="JAC T8" Click="JacT8Clicked"/>
-            <Button Template = "{StaticResource ButtonTemplate}" Content="JAC JS8" Click="JacJs8Clicked"/>
-            <Button Template = "{StaticResource ButtonTemplate}" Content="Loyalty" Click="LoyaltyCardClicked"/>
-            <Button Template = "{StaticResource ButtonTemplate}" Content="About Us" Click="AboutUsClicked"/>
-            <Button Template = "{StaticResource ButtonTemplate}" Content="Test Drive" Click="TestDriveClicked"/>
+            <Button Template = "{StaticResource ButtonTemplate}" Content="Baic X55" Command ="{Binding BaicX55Command}"/>
+            <Button Template = "{StaticResource ButtonTemplate}" Content="Baic X7" Command ="{Binding BaicX7Command}"/>
+            <Button Template = "{StaticResource ButtonTemplate}" Content="Baic X3" Command="{Binding BaicX3Command}"/>
+            <Button Template = "{StaticResource ButtonTemplate}" Content="JAC T8" Command="{Binding JacT8Command}"/>
+            <Button Template = "{StaticResource ButtonTemplate}" Content="JAC JS8" Command="{Binding JacJS8Command}"/>
+            <Button Template = "{StaticResource ButtonTemplate}" Content="Loyalty" Command="{Binding LoyaltyCommand}"/>
+            <Button Template = "{StaticResource ButtonTemplate}" Content="About Us" Command="{Binding AboutUsCommand}"/>
+            <Button Template = "{StaticResource ButtonTemplate}" Content="Test Drive" Command="{Binding TestDriveCommand}"/>
         </UniformGrid>
 
         <Grid Grid.Row="3">
@@ -87,6 +87,7 @@
             </StackPanel>
         </Grid>
         <ContentControl Grid.Row="2" Margin="20" Content="{Binding ActiveViewModel}">
+            
         </ContentControl>
     </Grid>
 </Window>

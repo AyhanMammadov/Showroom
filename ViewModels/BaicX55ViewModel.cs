@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Showroom.ViewModels;
-public class BaicX55ViewModel :ViewModelBase
+public class BaicX55ViewModel : ViewModelBase
 {
 
 }

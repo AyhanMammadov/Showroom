@@ -18,19 +18,17 @@ using System.Windows.Threading;
 
 namespace Showroom
 {
-
     public partial class MainWindow : Window
     {
         private DispatcherTimer timer;
-        private MainViewModel viewModel; 
 
         public MainWindow()
         {
             InitializeComponent();
 
-            this.viewModel = new MainViewModel();
-            this.viewModel.ActiveViewModel = new HomeViewModel();
-            this.DataContext = this.viewModel;
+            var viewModel = new MainViewModel();
+            viewModel.ActiveViewModel = new HomeViewModel();
+            this.DataContext = viewModel;
 
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
@@ -43,14 +41,7 @@ namespace Showroom
             DayOfWeekTextBlock.Text = DateTime.Now.ToString("dddd" , new CultureInfo("en-US"));
             TimeTextBlock.Text = DateTime.Now.ToString("HH:mm:ss");
         }
-        private void BaicX55Clicked(object sender, RoutedEventArgs e) => this.viewModel.ActiveViewModel = new BaicX55ViewModel();
-        private void BaicX3Clicked(object sender, RoutedEventArgs e) => this.viewModel.ActiveViewModel = new BaicX3ViewModel();
-        private void BaicX7Clicked(object sender, RoutedEventArgs e) => this.viewModel.ActiveViewModel = new BaicX7ViewModel();
-        private void JacJs8Clicked(object sender, RoutedEventArgs e) => this.viewModel.ActiveViewModel = new JacJs8ViewModel();
-        private void JacT8Clicked(object sender, RoutedEventArgs e) => this.viewModel.ActiveViewModel = new JACT8ViewModel();
-        private void LoyaltyCardClicked(object sender, RoutedEventArgs e) => this.viewModel.ActiveViewModel = new LoyaltyCardViewModel();
-        private void AboutUsClicked(object sender, RoutedEventArgs e) => this.viewModel.ActiveViewModel = new AboutUsViewModel();
-        private void TestDriveClicked(object sender, RoutedEventArgs e) => this.viewModel.ActiveViewModel = new TestDriveViewModel();
+        
         private void SubscribeClicked(object sender, RoutedEventArgs e)
         {
             string wrongEmail = "Wrong email template";
