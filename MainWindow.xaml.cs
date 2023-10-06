@@ -63,8 +63,8 @@ namespace Showroom
             if (this.mainGrid.Background is SolidColorBrush brush)
             {
                 if (brush.Color == Colors.Black)
-                    this.mainGrid.Background = new SolidColorBrush(Colors.DarkCyan);
-                else if (brush.Color == Colors.DarkCyan)
+                    this.mainGrid.Background = new SolidColorBrush(Colors.CadetBlue);
+                else if (brush.Color == Colors.CadetBlue)
                     this.mainGrid.Background = new SolidColorBrush(Colors.Black);
             }
         }

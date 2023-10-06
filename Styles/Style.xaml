@@ -77,7 +77,7 @@
                             <Setter Property="Background" Value="Black"/>
                         </Trigger>
                         <Trigger Property="IsChecked" Value="False">
-                            <Setter Property="Background" Value="DarkCyan"/>
+                            <Setter Property="Background" Value="CadetBlue"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

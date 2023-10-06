@@ -5,8 +5,133 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Showroom.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" Background="White">
-    <Grid>
-        <TextBlock Text="Loyalty Card ekran"/>
-    </Grid>
+             d:DesignHeight="450" d:DesignWidth="800" Background="Black">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/Style.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="450"/>
+                <RowDefinition Height="450"/>
+                <RowDefinition Height="450"/>
+                <RowDefinition Height="450"/>
+                <RowDefinition Height="450"/>
+                <RowDefinition Height="450"/>
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Image Source="https://performance-center.az/frontend/web/uploads//images/loyal/Loyalliq-KartiPNG.png"/>
+                <StackPanel Grid.Column="1">
+                    <Label Content="'What is Loyalty Card ?'" HorizontalAlignment="Center" FontSize="25" Margin="0 15 0 0"
+                           FontWeight="Bold" Foreground="White"/>
+                    <TextBlock Text="A Loyalty Card is a program that is directed towards customer satisfaction and is based on a high-tech platform. It allows customers to earn points through their purchases and services at Performance Center sales and service centers. These accumulated points can be redeemed for gifts or discounts equivalent to the value of the points."
+                               TextWrapping="Wrap" FontSize="26" FontStyle="Italic" FontWeight="DemiBold" Margin="0 30 0 0" Foreground="White"/>
+                    <Label Content="Make your choice at the Performance Center!" FontSize="26" FontStyle="Italic"
+                           FontWeight="DemiBold" Margin="0 30 0 0" Foreground="White"/>
+                    <Label Content="Get special discounts!" FontSize="26" FontStyle="Italic" FontWeight="DemiBold" Margin="0 30 0 0" Foreground="White"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="1" Margin="0 30 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Image Source="https://cdn-icons-png.flaticon.com/512/2775/2775994.png" Height="300" Width="300" RenderOptions.BitmapScalingMode="HighQuality"/>
+                <StackPanel Grid.Column="1">
+                    <Label Content="'Where does it take place?'" HorizontalAlignment="Center" FontSize="25" Margin="0 15 0 0"
+                           FontWeight="Bold" Foreground="White"/>
+                    <TextBlock Text="At Performance Center service centers:" FontSize="26" FontStyle="Italic" FontWeight="DemiBold"
+                               Margin="0 30 0 0" Foreground="White"/>
+                    <Label Content="- Baku city, Yasamal district, H. Zardabi street, 88." FontSize="20" FontStyle="Italic" 
+                           FontWeight="Light" Margin="0 30 0 0" Foreground="White"/>
+                    <Label Content="- Baku city, Babek avenue, neighborhood: 2360." FontSize="20" FontStyle="Italic" FontWeight="Light"
+                           Margin="0 30 0 0" Foreground="White"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Image Source="https://www.freepnglogos.com/uploads/shopping-bag-png/google-white-shopping-bag-icon-kalost-14.png"
+                       Height="300" RenderOptions.BitmapScalingMode="HighQuality"/>
+                <StackPanel Grid.Column="1">
+                    <Label Content="'How can I obtain a Loyalty Card?'" HorizontalAlignment="Center" FontSize="25" Margin="0 15 0 0"
+                           FontWeight="Bold" Foreground="White"/>
+                    <TextBlock Text="You can obtain a Loyalty Card from Performance Center service centers (20 January, Babek), or by filling out the application form on the website www.performance-center.az." 
+                               FontSize="26" FontStyle="Italic" FontWeight="DemiBold" TextWrapping="Wrap"
+                               Margin="0 75 0 0" Foreground="White"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Image Source="https://cdn-icons-png.flaticon.com/512/2344/2344132.png"
+                       RenderOptions.BitmapScalingMode="HighQuality" Height="300" Width="300"/>
+                <StackPanel Grid.Column="1">
+                    <Label Content="How is it calculated?" HorizontalAlignment="Center" FontSize="25" Margin="0 15 0 0"
+                           FontWeight="Bold" Foreground="White"/>
+                    <TextBlock Text="Points for the Loyalty Card are calculated based on the cardholder's balance for the purchase of automotive spare parts from Performance Center company (20 January, Babek) and cash payments made while using services at PC Service Centers, according to the following calculation:" FontSize="26" FontStyle="Italic" FontWeight="DemiBold"
+                               Margin="0 30 0 0" Foreground="White" TextWrapping="Wrap"/>
+                    <Label Content="- Calculation of points based on the amount paid for services or sales: 10 AZN = 1 point." FontSize="18" FontStyle="Italic"
+                           FontWeight="Light" Margin="0 30 0 0" Foreground="White"/>
+                    <Label Content="- Exchange of accumulated points: 10 points = 3 AZN." FontSize="18" FontStyle="Italic" FontWeight="Light"
+                           Margin="0 30 0 0" Foreground="White"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Image Source="https://cdn-icons-png.flaticon.com/512/3702/3702999.png"
+                       RenderOptions.BitmapScalingMode="HighQuality" Height="270" Width="270"/>
+                <StackPanel Grid.Column="1">
+                    <Label Content="Benefits" HorizontalAlignment="Center" FontSize="25" Margin="0 15 0 0"
+                           FontWeight="Bold" Foreground="White"/>
+                    <Label Content="As a member of the Loyalty Program with the Loyalty Card, you will:" FontSize="20" FontStyle="Italic" FontWeight="DemiBold"
+                               Margin="0 30 0 0" Foreground="White"/>
+                    <Label Content="- Earn a portion of the money you spend back in the form of bonuses." FontSize="18" FontStyle="Italic"
+                           FontWeight="Light" Margin="0 30 0 0" Foreground="White"/>
+                    <Label Content="- Enjoy ongoing promotions, discounts, and various offers." FontSize="18" FontStyle="Italic" FontWeight="Light"
+                           Margin="0 30 0 0" Foreground="White"/>
+                    <Label Content="- Save on your expenses." FontSize="18" FontStyle="Italic" FontWeight="Light"
+                           Margin="0 30 0 0" Foreground="White"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row='5' Background="FloralWhite">
+                <StackPanel HorizontalAlignment="Center">
+                    <Label Content="Application Form" FontSize="45" Foreground="Black"/>
+                    <TextBox Text="Name" HorizontalAlignment="Center" Foreground="Black" FontWeight="Light"
+                             Background="Gray" FontSize="20" Height="35" Width="420" FontStyle="Italic"/>
+                    <Label x:Name="nameLabel" Content="Incorrect name type" Foreground="Red" />
+
+
+                    <TextBox Text="Email adress" HorizontalAlignment="Center" Foreground="Black" FontWeight="Light"
+                             Background="Gray" FontSize="20" Height="35" Width="420" FontStyle="Italic"/>
+                    <Label x:Name="emailLabel" Content="Incorrect email type" Foreground="Red" />
+
+
+                    <TextBox Text="Mobile number" HorizontalAlignment="Center" Foreground="Black" FontWeight="Light"
+                             Background="Gray" FontSize="20" Height="35" Width="420" FontStyle="Italic"/>
+                    <Label x:Name="numberLabel" Content="Incorrect email type" Foreground="Red"/>
+
+                    <Button Template="{StaticResource ButtonTemplate}" Content="Send"/>
+                </StackPanel>
+            </Grid>
+
+        </Grid>
+        
+    </ScrollViewer>
 </UserControl>
