@@ -24,18 +24,18 @@ public class CarPhotosRepository : ICarPhotosRepository
 
         if (dataCount == 0)
         {
-            string createTableSql = File.ReadAllText("SQL/CarPhotos/CreateX55.sql");
+            string createTableSql = File.ReadAllText("SQL/CarPhotos/CreateX.sql");
             sqlConnection.Execute(createTableSql);
 
-            string insertDataSql = File.ReadAllText("SQL/CarPhotos/InsertX55.sql");
+            string insertDataSql = File.ReadAllText("SQL/CarPhotos/Insert.sql");
             sqlConnection.Execute(insertDataSql);
         }
     }
-    public IEnumerable<string> getAllPhotosUrl()
+    public IEnumerable<string> getAllPhotosUrl(string carModelName)
     {
-        return this.sqlConnection.Query<string>(sql: @"select ua.UrlAdres 
+        return this.sqlConnection.Query<string>(sql: @$"select ua.UrlAdres 
 from UrlAdreses ua
-where ua.CarName = 'BaicX55'");
+where ua.CarName = '{carModelName}'");
     }
 }
 

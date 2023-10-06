@@ -21,12 +21,13 @@
                 </Grid.RowDefinitions>
 
                 <Image Source="{Binding CurrentImage}" Margin="0 2 0 35" RenderOptions.BitmapScalingMode="HighQuality" Height="400" />
-                
+
                 <UniformGrid Margin="0 365 0 0" Columns="2" Background="Black" Height="30">
-                    <Button Content="←" Margin="150 0 0 0" Width="40" Background="Black" Foreground="White" FontSize="22" Click="ImageButtonClicked"/>
-                    <Button Content="→" Margin="0 0 100 0" Width="40" Background="Black" Foreground="White" FontSize="22" Click="ImageButtonClicked"/>
+                    <Button Content="←" Margin="150 0 0 0" Width="40" Background="Black" Foreground="White" FontSize="22"
+                            Command="{Binding PreviewButtonCommand}"/>
+                    <Button Content="→" Margin="0 0 100 0" Width="40" Background="Black" Foreground="White" FontSize="22"
+                            Command="{Binding NextButtonCommand}"/>
                 </UniformGrid>
-                
                 <Label Grid.Row="1" Content="Price: 31.500 AZN including VAT" Foreground="White" 
                    FontSize="25" FontStyle="Italic" FontWeight="Bold" Margin="50 0 0 0"/>
             </Grid>

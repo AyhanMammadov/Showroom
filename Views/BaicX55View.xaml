@@ -24,9 +24,9 @@
             <Image Source="{Binding CurrentImage}" Margin="0 2 0 35" RenderOptions.BitmapScalingMode="HighQuality" Height="400" />
             <UniformGrid Margin="0 365 0 0" Columns="2" Background="Black" Height="30">
                 <Button Content="←" Margin="150 0 0 0" Width="40" Background="Black" Foreground="White"
-                        FontSize="22" Command="{Binding ImageButtonCommand}" CommandParameter="←" x:Name="back"/>
+                        FontSize="22" Command="{Binding PreviewButtonCommand}" CommandParameter="←" x:Name="back"/>
                 <Button Content="→" Margin="0 0 100 0" Width="40" Background="Black" Foreground="White" FontSize="22"
-                        Command="{Binding ImageButtonCommand}" CommandParameter="→"/>
+                        Command="{Binding NextButtonCommand}" />
             </UniformGrid>
 
 

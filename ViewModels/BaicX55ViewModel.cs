@@ -34,14 +34,13 @@ public class BaicX55ViewModel : ViewModelBase, INotifyPropertyChanged
         imageUrls = new ObservableCollection<string>();
         this.DisplayModelInfo("ModelX55");
         this.AddPhotos();
-        ImageButtonCommand = new CommandBase(ExecuteImageButtonCommand , () => true);
     }
 
     #region Methods
     private void AddPhotos()
     {
         ICarPhotosRepository carPhotos = new CarPhotosRepository();
-        var result = carPhotos.getAllPhotosUrl();
+        var result = carPhotos.getAllPhotosUrl("BaicX55");
 
         foreach (var photo in result)
         {
@@ -87,19 +86,29 @@ public class BaicX55ViewModel : ViewModelBase, INotifyPropertyChanged
 
 
     #region Commands
-    public ICommand ImageButtonCommand { get;private set; }
-    private void ExecuteImageButtonCommand()
-    {
-        if (currentIndex > 0 && imageUrls.Count > 0)
-            currentIndex--;
-        if (currentIndex < imageUrls.Count - 1 && currentIndex >= 0)
-            currentIndex++;
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CurrentImage)));
-    }
+    private CommandBase nextButtonCommand;
+
+    public CommandBase NextButtonCommand => this.nextButtonCommand ??= new CommandBase(
+        execute: () =>
+        {
+            if (this.currentIndex < this.imageUrls.Count - 1)
+                currentIndex++;
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CurrentImage)));
+        },
+        canExecute: () => true);
+
+
+    private CommandBase previewButtonCommand;
+
+    public CommandBase PreviewButtonCommand => this.previewButtonCommand ??= new CommandBase(
+        execute: () =>
+        {
+            if (this.currentIndex > 0)
+                currentIndex--;
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CurrentImage)));
+        },
+        canExecute: () => true);
     #endregion
-
-
-
 
 }
 
