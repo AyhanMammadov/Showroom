@@ -113,6 +113,7 @@
             <Grid Grid.Row='5' Background="FloralWhite">
                 <StackPanel HorizontalAlignment="Center">
                     <Label Content="Application Form" FontSize="45" Foreground="Black"/>
+                    
                     <TextBox Text="Name" HorizontalAlignment="Center" Foreground="Black" FontWeight="Light"
                              Background="Gray" FontSize="20" Height="35" Width="420" FontStyle="Italic"/>
                     <Label x:Name="nameLabel" Content="Incorrect name type" Foreground="Red" />

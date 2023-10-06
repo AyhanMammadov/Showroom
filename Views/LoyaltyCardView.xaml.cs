@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace Showroom.Views
 {
-    /// <summary>
-    /// Interaction logic for LoyaltyCardView.xaml
-    /// </summary>
     public partial class LoyaltyCardView : UserControl
     {
         public LoyaltyCardView()

@@ -8,12 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\aboutUsInfo.txt" />
     <None Remove="Assets\carsInfo.txt" />
     <None Remove="SQL\CarPhotos\Create.sql" />
     <None Remove="SQL\CarPhotos\Insert.sql" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Assets\aboutUsInfo.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Assets\carsInfo.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
