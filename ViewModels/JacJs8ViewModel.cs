@@ -32,7 +32,7 @@ public class JacJs8ViewModel :ViewModelBase, INotifyPropertyChanged
     #region Methods
     private void AddPhotos()
     {
-        ICarPhotosRepository carPhotos = new CarPhotosRepository();
+        ICarPhotosRepository carPhotos = new CarDapperPhotosRepository();
         var result = carPhotos.getAllPhotosUrl("JacJs8");
 
         foreach (var photo in result)

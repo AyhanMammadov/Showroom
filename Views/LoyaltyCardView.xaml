@@ -113,26 +113,25 @@
             <Grid Grid.Row='5' Background="FloralWhite">
                 <StackPanel HorizontalAlignment="Center">
                     <Label Content="Application Form" FontSize="45" Foreground="Black"/>
-                    
-                    <TextBox Text="Name" HorizontalAlignment="Center" Foreground="Black" FontWeight="Light"
+
+
+                    <Label Content="Name"/>
+                    <TextBox Text="{Binding NameValue, Mode=TwoWay}" HorizontalAlignment="Center" Foreground="Black" FontWeight="Light"
                              Background="Gray" FontSize="20" Height="35" Width="420" FontStyle="Italic"/>
-                    <Label x:Name="nameLabel" Content="Incorrect name type" Foreground="Red" />
 
-
-                    <TextBox Text="Email adress" HorizontalAlignment="Center" Foreground="Black" FontWeight="Light"
+                    <Label Content="Email"/>
+                    <TextBox Text="{Binding EmailValue, Mode=TwoWay}" HorizontalAlignment="Center" Foreground="Black" FontWeight="Light" 
                              Background="Gray" FontSize="20" Height="35" Width="420" FontStyle="Italic"/>
-                    <Label x:Name="emailLabel" Content="Incorrect email type" Foreground="Red" />
 
 
-                    <TextBox Text="Mobile number" HorizontalAlignment="Center" Foreground="Black" FontWeight="Light"
+                    <Label Content="Mobile Number"/>
+                    <TextBox Text="{Binding PhoneNumber, Mode=TwoWay}" HorizontalAlignment="Center" Foreground="Black" FontWeight="Light"
                              Background="Gray" FontSize="20" Height="35" Width="420" FontStyle="Italic"/>
-                    <Label x:Name="numberLabel" Content="Incorrect email type" Foreground="Red"/>
+                    <Label Content="Incorrect input" Foreground="Red" Visibility="{Binding IncorrectInput ,Mode=TwoWay}"/>
 
-                    <Button Template="{StaticResource ButtonTemplate}" Content="Send"/>
+                    <Button Template="{StaticResource ButtonTemplate}" Content="Apply" Command="{Binding ApplyCommand}"/>
                 </StackPanel>
             </Grid>
-
         </Grid>
-        
     </ScrollViewer>
 </UserControl>

@@ -9,27 +9,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Showroom.Repositories;
-public class CarPhotosRepository : ICarPhotosRepository
+public class CarDapperPhotosRepository : ICarPhotosRepository
 {
 
     private const string connectionString = $"Server=localhost;Database=CarsUrl;Integrated Security = True;";
     private readonly SqlConnection sqlConnection;
-    public CarPhotosRepository()
+    public CarDapperPhotosRepository()
     {
         this.sqlConnection = new SqlConnection(connectionString);
-        sqlConnection.Open();
-
-        string checkDataSql = "SELECT COUNT(*) FROM UrlAdreses";
-        int dataCount = sqlConnection.ExecuteScalar<int>(checkDataSql);
-
-        if (dataCount == 0)
-        {
-            string createTableSql = File.ReadAllText("SQL/CarPhotos/CreateX.sql");
-            sqlConnection.Execute(createTableSql);
-
-            string insertDataSql = File.ReadAllText("SQL/CarPhotos/Insert.sql");
-            sqlConnection.Execute(insertDataSql);
-        }
+        sqlConnection.Open(); // sprosi u uchitela
     }
     public IEnumerable<string> getAllPhotosUrl(string carModelName)
     {

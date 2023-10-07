@@ -36,7 +36,7 @@ public class JACT8ViewModel : ViewModelBase , INotifyPropertyChanged
     #region Methods
     private void AddPhotos()
     {
-        ICarPhotosRepository carPhotos = new CarPhotosRepository();
+        ICarPhotosRepository carPhotos = new CarDapperPhotosRepository();
         var result = carPhotos.getAllPhotosUrl("JacT8");
 
         foreach (var photo in result)

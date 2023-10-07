@@ -39,7 +39,7 @@ public class BaicX7ViewModel : ViewModelBase , INotifyPropertyChanged
     #region Methods
     private void AddPhotos()
     {
-        ICarPhotosRepository carPhotos = new CarPhotosRepository();
+        ICarPhotosRepository carPhotos = new CarDapperPhotosRepository();
         var result = carPhotos.getAllPhotosUrl("BaicX7");
 
         foreach (var photo in result)
