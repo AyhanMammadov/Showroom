@@ -16,11 +16,11 @@ public class LoyalCardsConfiguration : IEntityTypeConfiguration<UserLoyalCards>
 
         builder.Property(u => u.Name)
             .IsRequired()
-            .HasMaxLength(20);
+            .HasMaxLength(15);
 
         builder.Property(u => u.PhoneNumber)
             .IsRequired()
-            .HasMaxLength(11);
+            .HasMaxLength(12);
 
         builder.Property(u => u.Email)
             .IsRequired()

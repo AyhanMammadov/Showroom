@@ -1,4 +1,5 @@
 ﻿using Showroom.Commands.Base;
+using Showroom.Models;
 using Showroom.Repositories.EFCoreRepository.DbContext;
 using Showroom.ViewModels.Base;
 using System;
@@ -91,8 +92,18 @@ public class LoyaltyCardViewModel : ViewModelBase, INotifyPropertyChanged
                 return;
             }
             IncorrectInput = Visibility.Hidden;
-            //var context = new MyDbContext();
-            //MessageBox.Show(context.Users.Count().ToString());
+            var context = new MyDbContext();
+            var user = new UserLoyalCards()
+            {
+                Name = this.NameValue,
+                Email = this.EmailValue,
+                PhoneNumber = this.PhoneNumber,
+            };
+
+            context.Add(user);
+            context.SaveChanges();
+            MessageBox.Show($"{this.NameValue} added succesfully", "Success!", MessageBoxButton.OK , MessageBoxImage.Information);
+
         },
         canExecute: () => true);
     #endregion
