@@ -1,4 +1,5 @@
 ﻿using Showroom.Commands.Base;
+using Showroom.Repositories.EFCoreRepository.DbContext;
 using Showroom.ViewModels.Base;
 using System;
 using System.Collections.Generic;
@@ -90,27 +91,32 @@ public class LoyaltyCardViewModel : ViewModelBase, INotifyPropertyChanged
                 return;
             }
             IncorrectInput = Visibility.Hidden;
+            //var context = new MyDbContext();
+            //MessageBox.Show(context.Users.Count().ToString());
         },
         canExecute: () => true);
     #endregion
 
 
+    #region Methonds
     private bool CheckInput()
     {
         if (string.IsNullOrWhiteSpace(this.NameValue) || string.IsNullOrWhiteSpace(this.PhoneNumber) || string.IsNullOrWhiteSpace(this.EmailValue))
             return false;
 
-        if(this.NameValue.Length < 3)
+        if (this.NameValue.Length < 3)
             return false;
 
-        if(this.phoneNumber.Length <10)
+        if (this.phoneNumber.Length < 10)
             return false;
 
-        if(!this.EmailValue.Contains('@') || !this.EmailValue.Contains('.'))
+        if (!this.EmailValue.Contains('@') || !this.EmailValue.Contains('.'))
             return false;
 
         return true;
     }
+
+    #endregion
 
 
 

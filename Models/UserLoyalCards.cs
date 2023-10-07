@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Showroom.Models;
-public class UserTestDrive
+public class UserLoyalCards
 {
     public string Name { get; set; }
     public string Email { get; set; }
