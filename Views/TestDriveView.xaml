@@ -5,8 +5,45 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Showroom.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" Background="White">
+             d:DesignHeight="450" d:DesignWidth="800" Background="Black">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/Style.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
+    
     <Grid>
-        <TextBlock Text="About us ekran"/>
+        <StackPanel HorizontalAlignment="Center">
+            <Label Content="Test Drive" Foreground="Red" FontSize="38" FontStyle="Italic" Margin="310 30 0 0" />
+            <Label Content="Please fill out the form below to test BAIC models. After you fill out the form, we will contact you." Foreground="Red"
+                   FontSize="20" Margin="0 20 0 0"/>
+            <UniformGrid Columns="3" Rows="7">
+                <Label Content="Name" Foreground="White"/>
+                <Label Content="Surname" Foreground="White"/>
+                <Label Content="Email" Foreground="White"/>
+                <TextBox Margin="0 0 20 0" FontSize="17"/>
+                <TextBox Margin="0 0 20 0" FontSize="17"/>
+                <TextBox Margin="0 0 20 0" FontSize="17"/>
+
+                <Label Content="Phone" Foreground="White"/>
+                <Label Content="Choose Model" Foreground="White"/>
+                <Label Content="Notes" Foreground="White"/>
+
+                <TextBox Margin="0 0 20 0" FontSize="17"/>
+                <ComboBox Margin="0 0 20 0" ItemsSource="{Binding CarsNames}"/>
+                <TextBox Margin="0 0 20 0"/>
+                
+                <Label/>
+                <Label/>
+                <Label/>
+                <Label/>
+                <Button Content="Apply" Background="Red" Foreground="White" FontSize="20" Margin="20 0 35 0"/>
+
+            </UniformGrid>
+        </StackPanel>
     </Grid>
 </UserControl>

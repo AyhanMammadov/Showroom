@@ -31,7 +31,7 @@ namespace Showroom
             this.DataContext = viewModel;
 
             timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(100);
+            timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += TimerTick;
             timer.Start();
         }

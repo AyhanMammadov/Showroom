@@ -8,9 +8,10 @@ using Showroom.Models;
 using Showroom.Repositories.EFCoreRepository.Configurations;
 
 namespace Showroom.Repositories.EFCoreRepository.DbContext;
-public class MyDbContext : Microsoft.EntityFrameworkCore.DbContext
+public class MyEFRepository : Microsoft.EntityFrameworkCore.DbContext
 {
     public DbSet<UserLoyalCards> Users { get; set; }
+    public DbSet<CarsName> Cars { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         base.OnConfiguring(optionsBuilder);
@@ -21,6 +22,7 @@ public class MyDbContext : Microsoft.EntityFrameworkCore.DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfiguration(new LoyalCardsConfiguration());
+        modelBuilder.ApplyConfiguration(new CarNamesConfiguration());
         base.OnModelCreating(modelBuilder);
     }
 }

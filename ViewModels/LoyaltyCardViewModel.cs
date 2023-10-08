@@ -92,7 +92,7 @@ public class LoyaltyCardViewModel : ViewModelBase, INotifyPropertyChanged
                 return;
             }
             IncorrectInput = Visibility.Hidden;
-            var context = new MyDbContext();
+            var context = new MyEFRepository();
             var user = new UserLoyalCards()
             {
                 Name = this.NameValue,

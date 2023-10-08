@@ -10,7 +10,7 @@ using Showroom.Repositories.EFCoreRepository.DbContext;
 
 namespace Showroom.Migrations
 {
-    [DbContext(typeof(MyDbContext))]
+    [DbContext(typeof(MyEFRepository))]
     [Migration("20231007195931_Add LoyalCards")]
     partial class AddLoyalCards
     {

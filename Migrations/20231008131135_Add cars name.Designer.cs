@@ -11,8 +11,8 @@ using Showroom.Repositories.EFCoreRepository.DbContext;
 namespace Showroom.Migrations
 {
     [DbContext(typeof(MyEFRepository))]
-    [Migration("20231007204151_Change Users Column")]
-    partial class ChangeUsersColumn
+    [Migration("20231008131135_Add cars name")]
+    partial class Addcarsname
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,6 +23,24 @@ namespace Showroom.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("Showroom.Models.CarsName", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Cars");
+                });
 
             modelBuilder.Entity("Showroom.Models.UserLoyalCards", b =>
                 {
