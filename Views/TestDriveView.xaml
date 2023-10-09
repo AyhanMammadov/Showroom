@@ -34,7 +34,7 @@
                 <Label Content="Notes" Foreground="White"/>
 
                 <TextBox Text="{Binding Phone, Mode=TwoWay}" Margin="0 0 20 0" FontSize="17"/>
-                <ComboBox Margin="0 0 20 0" ItemsSource="{Binding CarsNames}"/>
+                <ComboBox Margin="0 0 20 0" ItemsSource="{Binding CarsNames}" SelectedItem="{Binding SelectedCarName}"/>
                 <TextBox Text="{Binding Notes, Mode=TwoWay}" Margin="0 0 20 0"/>
                 
                 <Label/>

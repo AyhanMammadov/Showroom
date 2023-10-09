@@ -1,5 +1,9 @@
 ﻿using Dapper;
+using Showroom.Repositories;
+using Showroom.Repositories.Base;
 using Showroom.Repositories.EFCoreRepository.DbContext;
+using Showroom.ViewModels;
+using SimpleInjector;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -17,8 +21,20 @@ namespace Showroom
     /// </summary>
     public partial class App : Application
     {
+        public static Container container { get; set; } = new Container();
+
         protected override void OnStartup(StartupEventArgs e)
         {
+
+
+            container.RegisterSingleton<ICarPhotosRepository ,CarDapperPhotosRepository>();
+            container.RegisterSingleton<BaicX3ViewModel>();
+            container.RegisterSingleton<BaicX55ViewModel>();
+            container.RegisterSingleton<BaicX7ViewModel>();
+            container.RegisterSingleton<JacJs8ViewModel>();
+            container.RegisterSingleton<JACT8ViewModel>();
+            container.Verify();
+
 
             var context = new MyEFRepository();
             context.Database.EnsureCreated(); // creating Database on other localhost

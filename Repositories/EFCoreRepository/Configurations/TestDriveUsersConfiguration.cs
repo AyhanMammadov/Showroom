@@ -23,11 +23,10 @@ public class TestDriveUsersConfiguration : IEntityTypeConfiguration<TestDriveUse
             .HasDefaultValue("Unknown");
 
         builder.Property(c => c.Email)
-            .HasMaxLength (15).HasDefaultValue("Unknown");
+            .HasMaxLength (30).HasDefaultValue("Unknown");
 
         builder.Property(c => c.Phone)
             .IsRequired().HasMaxLength(15);
-
     }
 }
 

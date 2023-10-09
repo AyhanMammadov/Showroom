@@ -10,6 +10,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Showroom.ViewModels;
 public class TestDriveViewModel : ViewModelBase , INotifyPropertyChanged
@@ -82,6 +83,13 @@ public class TestDriveViewModel : ViewModelBase , INotifyPropertyChanged
         }
     }
 
+    private CarsName? selectedCarName;
+    public CarsName? SelectedCarName
+    {
+        get { return selectedCarName; }
+        set { base.PropertyChangeMethod(out selectedCarName, value); }
+    }
+
 
     #endregion
 
@@ -135,17 +143,20 @@ public class TestDriveViewModel : ViewModelBase , INotifyPropertyChanged
                 return;
             }
             var context = new MyEFRepository();
-            var user = new UserLoyalCards();
-            //{
-            //    Name = this.Name,
-            //    Email = this.EmailValue,
-            //    PhoneNumber = this.PhoneNumber,
-            //};
+            var user = new TestDriveUsers()
+            {
+                Name = this.Name,
+                Phone = this.Phone,
+                Surname = this.Surname,
+                Email = this.Email,
+                Notes = this.Notes,
+                CarsId = this.selectedCarName?.Id
+            };
 
-            //context.Add(user);
-            //context.SaveChanges();
-            //MessageBox.Show($"{this.NameValue} added succesfully", "Success!", MessageBoxButton.OK, MessageBoxImage.Information);
+            context.Add(user);
+            context.SaveChanges();
 
+            MessageBox.Show($"{this.Name} added succesfully", "Success!", MessageBoxButton.OK, MessageBoxImage.Information);
         },
         canExecute: () => true);
     #endregion

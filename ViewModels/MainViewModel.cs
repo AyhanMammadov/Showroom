@@ -21,35 +21,35 @@ public class MainViewModel : ViewModelBase
     private CommandBase baicX55Command;
 
     public CommandBase BaicX55Command => this.baicX55Command ??= new CommandBase(
-        execute: () => ActiveViewModel = new BaicX55ViewModel(),
+        execute: () => ActiveViewModel = App.container.GetInstance<BaicX55ViewModel>(),
         canExecute: () => true);
 
 
     private CommandBase baicX7Command;
 
     public CommandBase BaicX7Command => this.baicX7Command ??= new CommandBase(
-        execute: () => ActiveViewModel = new BaicX7ViewModel(),
+        execute: () => ActiveViewModel = App.container.GetInstance<BaicX7ViewModel>(),
         canExecute: () => true);
 
 
     private CommandBase baicX3Command;
 
     public CommandBase BaicX3Command => this.baicX3Command ??= new CommandBase(
-        execute: () => ActiveViewModel = new BaicX3ViewModel(),
+        execute: () => ActiveViewModel = App.container.GetInstance<BaicX3ViewModel>(),
         canExecute: () => true);
 
 
     private CommandBase jacJS8Command;
 
     public CommandBase JacJS8Command => this.jacJS8Command ??= new CommandBase(
-        execute: () => ActiveViewModel = new JacJs8ViewModel(),
+        execute: () => ActiveViewModel = App.container.GetInstance<JacJs8ViewModel>(),
         canExecute: () => true);
 
 
     private CommandBase jacT8Command;
 
     public CommandBase JacT8Command => this.jacT8Command ??= new CommandBase(
-        execute: () => ActiveViewModel = new JACT8ViewModel(),
+        execute: () => ActiveViewModel = App.container.GetInstance<JACT8ViewModel>(),
         canExecute: () => true);
 
 
