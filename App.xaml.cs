@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using Showroom.Repositories.EFCoreRepository.DbContext;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -18,6 +19,10 @@ namespace Showroom
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+
+            var context = new MyEFRepository();
+            context.Database.EnsureCreated(); // creating Database on other localhost
+
             var sqlConnection = new SqlConnection("Server = localhost; Database = CarsUrl; Integrated Security = True; ");
             sqlConnection.Open();
 
@@ -26,11 +31,11 @@ namespace Showroom
 
             if (dataCount == 0)
             {
-                string createTableSql = File.ReadAllText("SQL/CarPhotos/Create.sql");
-                sqlConnection.Execute(createTableSql);
+                string SqlCarsUrl = File.ReadAllText("SQL/CarPhotos/CarsUrl.sql");
+                sqlConnection.Execute(SqlCarsUrl);
 
-                string insertDataSql = File.ReadAllText("SQL/CarPhotos/Insert.sql");
-                sqlConnection.Execute(insertDataSql);
+                string CarsName = File.ReadAllText("SQL/CarPhotos/CarsName.sql");
+                sqlConnection.Execute(CarsName);
             }
                 base.OnStartup(e);
         }

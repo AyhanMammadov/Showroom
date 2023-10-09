@@ -16,6 +16,7 @@ public class MyEFRepository : Microsoft.EntityFrameworkCore.DbContext
     {
         base.OnConfiguring(optionsBuilder);
 
+        optionsBuilder.UseSqlServer(connectionString: $"Server=localhost;Database=CarsUrl;Integrated Security=True;TrustServerCertificate=True;");
         optionsBuilder.UseSqlServer(connectionString: $"Server=localhost;Database=EFCoreDb;Integrated Security=True;TrustServerCertificate=True;");
     }        
 

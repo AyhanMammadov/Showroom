@@ -1,3 +1,10 @@
+create table UrlAdreses(
+[CarName] nvarchar(20) not null,
+[UrlAdres] nvarchar(max) not null,);
+
+
+
+use CarsUrl
 insert into UrlAdreses([CarName] , [UrlAdres])
 values('BaicX55' , 'https://turbo.azstatic.com/uploads/full/2023%2F02%2F02%2F15%2F11%2F10%2F97615167-c7bb-4a0f-b54d-740cd8fbb2fb%2F9732_Vq2Y0w8druOEOA_9QvEw2A.jpg'),
 ('BaicX55' , 'https://turbo.azstatic.com/uploads/full/2023%2F02%2F02%2F15%2F11%2F10%2Fb354061b-58ac-46f8-892b-82edf00dbbbc%2F9734_Nz0nF3hpVMHeZo-vwx5YZg.jpg'),
@@ -39,4 +46,8 @@ values('BaicX55' , 'https://turbo.azstatic.com/uploads/full/2023%2F02%2F02%2F15%
 ('JacT8','https://turbo.azstatic.com/uploads/full/2022%2F03%2F15%2F15%2F37%2F26%2F5337e5fd-906a-46e1-8137-c3a796637a03%2F70352_ghQ_A0-yc6GA7PHHhnYM4w.jpg'),
 ('JacT8','https://turbo.azstatic.com/uploads/full/2022%2F03%2F15%2F15%2F37%2F25%2F660870e5-2348-4868-a634-a87368785cfe%2F70358_ywbg11pCptNGpNyzQrMHig.jpg'),
 ('JacT8','https://turbo.azstatic.com/uploads/full/2022%2F03%2F15%2F15%2F37%2F25%2Ff92db850-baac-4569-83a3-ab211312b418%2F58618_9LNAYtiEzpERCENLqQCqPg.jpg');
+
+
+
+
 

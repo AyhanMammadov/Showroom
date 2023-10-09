@@ -10,8 +10,8 @@
   <ItemGroup>
     <None Remove="Assets\aboutUsInfo.txt" />
     <None Remove="Assets\carsInfo.txt" />
-    <None Remove="SQL\CarPhotos\Create.sql" />
-    <None Remove="SQL\CarPhotos\Insert.sql" />
+    <None Remove="SQL\CarPhotos\CarsName.sql" />
+    <None Remove="SQL\CarPhotos\CarsUrl.sql" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,10 +21,10 @@
     <Content Include="Assets\carsInfo.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="SQL\CarPhotos\Create.sql">
+    <Content Include="SQL\CarPhotos\CarsUrl.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="SQL\CarPhotos\Insert.sql">
+    <Content Include="SQL\CarPhotos\CarsName.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
