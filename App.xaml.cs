@@ -23,10 +23,10 @@ namespace Showroom
             var context = new MyEFRepository();
             context.Database.EnsureCreated(); // creating Database on other localhost
 
-            var sqlConnection = new SqlConnection("Server = localhost; Database = CarsUrl; Integrated Security = True; ");
+            var sqlConnection = new SqlConnection("Server = localhost; Database = EFCoreDb; Integrated Security = True; ");
             sqlConnection.Open();
 
-            string checkDataSql = "SELECT COUNT(*) FROM UrlAdreses";
+            string checkDataSql = "SELECT COUNT(*) FROM CarsUrls";
             int dataCount = sqlConnection.ExecuteScalar<int>(checkDataSql);
 
             if (dataCount == 0)

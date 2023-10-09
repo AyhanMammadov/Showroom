@@ -1,11 +1,4 @@
-create table UrlAdreses(
-[CarName] nvarchar(20) not null,
-[UrlAdres] nvarchar(max) not null,);
-
-
-
-use CarsUrl
-insert into UrlAdreses([CarName] , [UrlAdres])
+insert into dbo.CarsUrls([CarName] , [UrlAdres])
 values('BaicX55' , 'https://turbo.azstatic.com/uploads/full/2023%2F02%2F02%2F15%2F11%2F10%2F97615167-c7bb-4a0f-b54d-740cd8fbb2fb%2F9732_Vq2Y0w8druOEOA_9QvEw2A.jpg'),
 ('BaicX55' , 'https://turbo.azstatic.com/uploads/full/2023%2F02%2F02%2F15%2F11%2F10%2Fb354061b-58ac-46f8-892b-82edf00dbbbc%2F9734_Nz0nF3hpVMHeZo-vwx5YZg.jpg'),
 ('BaicX55' , 'https://turbo.azstatic.com/uploads/full/2023%2F02%2F02%2F15%2F12%2F34%2F49eaa551-0a6e-4e85-b1a8-8e84e993dda2%2F912_gu3FRS-N0nbjmjZiXH3C8A.jpg'),
