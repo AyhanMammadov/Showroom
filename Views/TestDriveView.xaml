@@ -25,23 +25,23 @@
                 <Label Content="Name" Foreground="White"/>
                 <Label Content="Surname" Foreground="White"/>
                 <Label Content="Email" Foreground="White"/>
-                <TextBox Margin="0 0 20 0" FontSize="17"/>
-                <TextBox Margin="0 0 20 0" FontSize="17"/>
-                <TextBox Margin="0 0 20 0" FontSize="17"/>
+                <TextBox Text="{Binding Name, Mode=TwoWay}" Margin="0 0 20 0" FontSize="17"/>
+                <TextBox Text="{Binding Surname, Mode=TwoWay}" Margin="0 0 20 0" FontSize="17"/>
+                <TextBox Text="{Binding Email, Mode=TwoWay}" Margin="0 0 20 0" FontSize="17"/>
 
                 <Label Content="Phone" Foreground="White"/>
                 <Label Content="Choose Model" Foreground="White"/>
                 <Label Content="Notes" Foreground="White"/>
 
-                <TextBox Margin="0 0 20 0" FontSize="17"/>
+                <TextBox Text="{Binding Phone, Mode=TwoWay}" Margin="0 0 20 0" FontSize="17"/>
                 <ComboBox Margin="0 0 20 0" ItemsSource="{Binding CarsNames}"/>
-                <TextBox Margin="0 0 20 0"/>
+                <TextBox Text="{Binding Notes, Mode=TwoWay}" Margin="0 0 20 0"/>
                 
                 <Label/>
                 <Label/>
                 <Label/>
                 <Label/>
-                <Button Content="Apply" Background="Red" Foreground="White" FontSize="20" Margin="20 0 35 0"/>
+                <Button Content="Apply" Background="Red" Foreground="White" FontSize="20" Margin="20 0 35 0" Command="{Binding ApplyCommand}"/>
 
             </UniformGrid>
         </StackPanel>

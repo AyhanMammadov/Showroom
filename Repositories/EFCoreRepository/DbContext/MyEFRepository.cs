@@ -12,6 +12,7 @@ public class MyEFRepository : Microsoft.EntityFrameworkCore.DbContext
 {
     public DbSet<UserLoyalCards> Users { get; set; }
     public DbSet<CarsName> Cars { get; set; }
+    public DbSet<TestDriveUsers> TestDriveUsers { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         base.OnConfiguring(optionsBuilder);
@@ -24,6 +25,7 @@ public class MyEFRepository : Microsoft.EntityFrameworkCore.DbContext
     {
         modelBuilder.ApplyConfiguration(new LoyalCardsConfiguration());
         modelBuilder.ApplyConfiguration(new CarNamesConfiguration());
+        modelBuilder.ApplyConfiguration(new TestDriveUsersConfiguration());
         base.OnModelCreating(modelBuilder);
     }
 }
