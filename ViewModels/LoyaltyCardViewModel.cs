@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using System.Windows;
 
 namespace Showroom.ViewModels;
-public class LoyaltyCardViewModel : ViewModelBase, INotifyPropertyChanged
+public class LoyaltyCardViewModel : ViewModelBase
 {
 
     #region fullProperties
@@ -24,7 +24,7 @@ public class LoyaltyCardViewModel : ViewModelBase, INotifyPropertyChanged
         set
         {
             this.nameValue = value;
-            OnPropertyChanged("NameValue");
+            base.PropertyChangeMethod(out nameValue , value);
         }
     }
 
@@ -36,7 +36,7 @@ public class LoyaltyCardViewModel : ViewModelBase, INotifyPropertyChanged
         set
         {
             this.emailValue = value;
-            OnPropertyChanged("EmailValue");
+            base.PropertyChangeMethod(out emailValue, value);
         }
     }
 
@@ -49,7 +49,7 @@ public class LoyaltyCardViewModel : ViewModelBase, INotifyPropertyChanged
         set
         {
             this.phoneNumber = value;
-            OnPropertyChanged("PhoneNumber");
+            base.PropertyChangeMethod(out phoneNumber, value);
         }
     }
 
@@ -62,17 +62,12 @@ public class LoyaltyCardViewModel : ViewModelBase, INotifyPropertyChanged
         set
         {
             incorrectInput = value;
-            OnPropertyChanged("IncorrectInput");
+            base.PropertyChangeMethod(out incorrectInput, value);
         }
     }
     #endregion
 
-    public event PropertyChangedEventHandler? PropertyChanged;
-
-    private void OnPropertyChanged([CallerMemberName] string propName = "")
-    {
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
-    }
+    
 
     public LoyaltyCardViewModel()
     {

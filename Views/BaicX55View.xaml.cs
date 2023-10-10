@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Showroom.Views.Other;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -27,5 +28,10 @@ public partial class BaicX55View : UserControl
         InitializeComponent();
     }
 
-    
+    private void Button_Click(object sender, RoutedEventArgs e)
+    {
+        CalculatingWindow creditWindow = new CalculatingWindow();
+
+        creditWindow.ShowDialog();
+    }
 }

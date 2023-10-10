@@ -13,13 +13,12 @@ using System.Threading.Tasks;
 using System.Windows;
 
 namespace Showroom.ViewModels;
-public class TestDriveViewModel : ViewModelBase , INotifyPropertyChanged
+public class TestDriveViewModel : ViewModelBase
 {
     #region Fields
     private readonly MyEFRepository context;
     public ObservableCollection<CarsName> CarsNames { get; set; } = new ObservableCollection<CarsName>();
 
-    public event PropertyChangedEventHandler? PropertyChanged;
 
 
     private string name;
@@ -30,7 +29,7 @@ public class TestDriveViewModel : ViewModelBase , INotifyPropertyChanged
         set
         {
             this.name = value;
-            OnPropertyChanged("Name");
+            base.PropertyChangeMethod(out name, value);
         }
     }
 
@@ -42,7 +41,7 @@ public class TestDriveViewModel : ViewModelBase , INotifyPropertyChanged
         set
         {
             this.surname = value;
-            OnPropertyChanged("Surname");
+            base.PropertyChangeMethod(out surname, value);
         }
     }
 
@@ -54,7 +53,7 @@ public class TestDriveViewModel : ViewModelBase , INotifyPropertyChanged
         set
         {
             this.email = value;
-            OnPropertyChanged("Email");
+            base.PropertyChangeMethod(out email, value);
         }
     }
 
@@ -67,7 +66,7 @@ public class TestDriveViewModel : ViewModelBase , INotifyPropertyChanged
         set
         {
             this.phone = value;
-            OnPropertyChanged("Phone");
+            base.PropertyChangeMethod(out phone, value);
         }
     }
 
@@ -79,7 +78,7 @@ public class TestDriveViewModel : ViewModelBase , INotifyPropertyChanged
         set
         {
             this.notes = value;
-            OnPropertyChanged("Notes");
+            base.PropertyChangeMethod(out notes, value);
         }
     }
 
@@ -87,7 +86,23 @@ public class TestDriveViewModel : ViewModelBase , INotifyPropertyChanged
     public CarsName? SelectedCarName
     {
         get { return selectedCarName; }
-        set { base.PropertyChangeMethod(out selectedCarName, value); }
+        set
+        {
+            base.PropertyChangeMethod(out selectedCarName, value);
+        }
+    }
+
+
+    private Visibility incorrectInput;
+    public Visibility IncorrectInput
+    {
+        get => incorrectInput;
+
+        set
+        {
+            incorrectInput = value;
+            base.PropertyChangeMethod(out incorrectInput, value);
+        }
     }
 
 
@@ -96,7 +111,7 @@ public class TestDriveViewModel : ViewModelBase , INotifyPropertyChanged
     public TestDriveViewModel()
     {
         this.context = new MyEFRepository();
-        
+        this.incorrectInput = Visibility.Hidden;
         this.RefreshCarNames();
     }
 
@@ -109,11 +124,6 @@ public class TestDriveViewModel : ViewModelBase , INotifyPropertyChanged
         {
             CarsNames.Add(item);
         }
-    }
-
-    private void OnPropertyChanged([CallerMemberName] string propName = "")
-    {
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
     }
 
     private bool CheckInput()
@@ -140,6 +150,7 @@ public class TestDriveViewModel : ViewModelBase , INotifyPropertyChanged
         {
             if (!this.CheckInput())
             {
+                this.IncorrectInput= Visibility.Visible;
                 return;
             }
             var context = new MyEFRepository();
