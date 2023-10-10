@@ -12,8 +12,9 @@ namespace Showroom.Repositories;
 public class CarDapperPhotosRepository : ICarPhotosRepository
 {
 
-    private const string connectionString = $"Server=localhost;Database=EFCoreDb;Integrated Security = True;";
+    private const string connectionString = $"Server=localhost;Database=EFCoreDb;User Id=admin;Password=admin;TrustServerCertificate=True";
     private readonly SqlConnection sqlConnection;
+
     public CarDapperPhotosRepository()
     {
         this.sqlConnection = new SqlConnection(connectionString);

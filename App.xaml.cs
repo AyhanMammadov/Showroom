@@ -26,20 +26,10 @@ namespace Showroom
         protected override void OnStartup(StartupEventArgs e)
         {
 
-
-            container.RegisterSingleton<ICarPhotosRepository ,CarDapperPhotosRepository>();
-            container.RegisterSingleton<BaicX3ViewModel>();
-            container.RegisterSingleton<BaicX55ViewModel>();
-            container.RegisterSingleton<BaicX7ViewModel>();
-            container.RegisterSingleton<JacJs8ViewModel>();
-            container.RegisterSingleton<JACT8ViewModel>();
-            container.Verify();
-
-
             var context = new MyEFRepository();
             context.Database.EnsureCreated(); // creating Database on other localhost
 
-            var sqlConnection = new SqlConnection("Server = localhost; Database = EFCoreDb; Integrated Security = True; ");
+            var sqlConnection = new SqlConnection("Server=localhost;Database=EFCoreDb;User Id=admin;Password=admin;TrustServerCertificate=True");
             sqlConnection.Open();
 
             string checkDataSql = "SELECT COUNT(*) FROM CarsUrls";
@@ -53,6 +43,18 @@ namespace Showroom
                 string CarsName = File.ReadAllText("SQL/CarPhotos/CarsName.sql");
                 sqlConnection.Execute(CarsName);
             }
+
+
+            container.RegisterSingleton<ICarPhotosRepository ,CarDapperPhotosRepository>();
+            container.RegisterSingleton<BaicX3ViewModel>();
+            container.RegisterSingleton<BaicX55ViewModel>();
+            container.RegisterSingleton<BaicX7ViewModel>();
+            container.RegisterSingleton<JacJs8ViewModel>();
+            container.RegisterSingleton<JACT8ViewModel>();
+            container.Verify();
+
+
+            
                 base.OnStartup(e);
         }
     }
